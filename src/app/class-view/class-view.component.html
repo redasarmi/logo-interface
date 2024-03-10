@@ -1,29 +1,75 @@
-<div class="class-view-container">
-  <form [formGroup]="classForm" (ngSubmit)="createClass()">
-    <label for="className">Class Name:</label>
-    <input type="text" id="className" formControlName="className">
-    <button type="submit">Create Class</button>
-  </form>
+<div class="flex flex-row gap-3 mt-4">
+  <p-card>
+    <form
+      [formGroup]="classForm"
+      (ngSubmit)="createClass()"
+      class="flex flex-column gap-2"
+    >
+      <label for="className">Class Name:</label>
+      <input
+        type="text"
+        id="className"
+        pInputText
+        formControlName="className"
+      />
+      <button type="submit">Create Class</button>
+    </form>
+  </p-card>
 
-  <form [formGroup]="studentForm" (ngSubmit)="addStudent()">
-    <label for="studentName">Student Name:</label>
-    <input type="text" id="studentName" formControlName="studentName">
+  <p-card>
+    <form
+      [formGroup]="studentForm"
+      (ngSubmit)="addStudent()"
+      class="flex flex-column gap-3"
+    >
+      <div class="flex flex-column gap-2">
+        <label for="studentName">Student Name:</label>
+        <input
+          type="text"
+          id="studentName"
+          pInputText
+          formControlName="studentName"
+        />
+      </div>
+      <div class="flex flex-column gap-2">
+        <label for="studentEmail">Student Email:</label>
+        <input
+          type="email"
+          pInputText
+          id="studentEmail"
+          formControlName="studentEmail"
+        />
+        <button type="submit">Add Student</button>
+      </div>
+    </form>
+  </p-card>
 
-    <label for="studentEmail">Student Email:</label>
-    <input type="email" id="studentEmail" formControlName="studentEmail">
-    <button type="submit">Add Student</button>
-  </form>
+  <p-card>
+    <form
+      [formGroup]="practiceForm"
+      (ngSubmit)="createAssignment()"
+      class="flex flex-column gap-2"
+    >
+      <label for="practiceId">Practice ID:</label>
+      <input
+        type="text"
+        pInputText
+        id="practiceId"
+        formControlName="practiceId"
+      />
+      <button type="submit">Create Assignment</button>
+    </form>
+  </p-card>
 
-  <form [formGroup]="practiceForm" (ngSubmit)="createAssignment()">
-    <label for="practiceId">Practice ID:</label>
-    <input type="text" id="practiceId" formControlName="practiceId">
-    <button type="submit">Create Assignment</button>
-  </form>
-
-  <form [formGroup]="gradeForm" (ngSubmit)="gradeAssignment()">
-    <label for="grade">Grade:</label>
-    <input type="text" id="grade" formControlName="grade">
-    <button type="submit">Grade Assignment</button>
-  </form>
+  <p-card>
+    <form
+      [formGroup]="gradeForm"
+      (ngSubmit)="gradeAssignment()"
+      class="flex flex-column gap-2"
+    >
+      <label for="grade">Grade:</label>
+      <input type="text" pInputText id="grade" formControlName="grade" />
+      <button type="submit">Grade Assignment</button>
+    </form>
+  </p-card>
 </div>
-
