@@ -1,12 +1,24 @@
 <div>
-  <h3>Enter Script:</h3>
-  <form [formGroup]="formGroup">
-    <textarea rows="5" cols="30" pInputTextarea formControlName="scriptInput"></textarea>
-    <p-button label="Run Script" (onClick)="executeCommands()"></p-button>
+  <div class="flex justify-content-between align-items-center my-2">
+    <h3 class="m-0">Script</h3>
+    <div class="flex">
+      <p-fileUpload mode="basic" chooseLabel="Importer" (onUpload)="onFileSelected($event)"></p-fileUpload>
+    </div>
+  </div>
+  <form [formGroup]="formGroup" class="flex flex-column gap-4">
+    <textarea
+      rows="5"
+      cols="30"
+      class="script-area"
+      pInputTextarea
+      formControlName="scriptInput"
+      style="resize: none;"
+    ></textarea>
+    <p-button
+      class="w-full"
+      styleClass="w-full"
+      label="Run Script"
+      (onClick)="executeCommands()"
+    ></p-button>
   </form>
-</div>
-
-<div>
-  <h3>Or upload a file:</h3>
-  <input type="file" (change)="onFileSelected($event)">
 </div>
