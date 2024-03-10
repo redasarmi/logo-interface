@@ -8,12 +8,11 @@ import {NgOptimizedImage} from "@angular/common";
 import {FileUploadModule} from "primeng/fileupload";
 import {ScriptViewComponent} from "./script-view/script-view.component";
 import { HttpClientModule } from '@angular/common/http';
-import {AppRoutingModule} from "./app.routes";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ConsoleViewComponent, UiViewComponent, MenubarModule, NgOptimizedImage, FileUploadModule, ScriptViewComponent, HttpClientModule, AppRoutingModule],
+  imports: [RouterOutlet, ConsoleViewComponent, UiViewComponent, MenubarModule, NgOptimizedImage, FileUploadModule, ScriptViewComponent, HttpClientModule],
   providers: [Router],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

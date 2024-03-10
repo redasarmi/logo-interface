@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {PrimeNGConfig} from "primeng/api";
 import {HttpClient} from "@angular/common/http";
+import { InputTextModule } from 'primeng/inputtext';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-class-view',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CardModule, CommonModule, ReactiveFormsModule, InputTextModule],
   providers: [FormBuilder, PrimeNGConfig, HttpClient],
   templateUrl: './class-view.component.html',
   styleUrl: './class-view.component.css'
