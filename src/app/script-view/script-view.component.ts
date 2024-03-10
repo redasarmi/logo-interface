@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {InputTextareaModule} from "primeng/inputtextarea";
+import { FileUploadModule } from 'primeng/fileupload';
+
 
 @Component({
   selector: 'app-script-view',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, ButtonModule, InputTextareaModule],
+  imports: [CommonModule, ReactiveFormsModule, ButtonModule, InputTextareaModule, FileUploadModule ],
   templateUrl: './script-view.component.html',
   styleUrl: './script-view.component.css'
 })

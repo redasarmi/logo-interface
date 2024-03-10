@@ -1,1 +1,9 @@
 
+.script-area {
+    width: 500px;
+    height: 500px;
+}
+
+h3 {
+    margin-top: 0;
+}
