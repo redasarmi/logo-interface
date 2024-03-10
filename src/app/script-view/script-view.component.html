@@ -1,0 +1,12 @@
+<div>
+  <h3>Enter Script:</h3>
+  <form [formGroup]="formGroup">
+    <textarea rows="5" cols="30" pInputTextarea formControlName="scriptInput"></textarea>
+    <p-button label="Run Script" (onClick)="executeCommands()"></p-button>
+  </form>
+</div>
+
+<div>
+  <h3>Or upload a file:</h3>
+  <input type="file" (change)="onFileSelected($event)">
+</div>

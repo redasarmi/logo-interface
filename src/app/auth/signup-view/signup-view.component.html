@@ -1,0 +1,24 @@
+<div class="p-fluid">
+    <form [formGroup]="formGroup">
+      <div class="p-field">
+        <label for="name">Name</label>
+        <textarea id="name" rows="5" cols="30" pInputTextarea formControlName="name"></textarea>
+      </div>
+      <div class="p-field">
+        <label for="surname">Surname</label>
+        <textarea id="surname" rows="5" cols="30" pInputTextarea formControlName="surname"></textarea>
+      </div>
+      <div class="p-field">
+        <label for="email">Email</label>
+        <textarea id="email" rows="5" cols="30" pInputTextarea formControlName="email"></textarea>
+      </div>
+      <div class="p-field">
+        <label for="isTeacher">Are you a teacher</label>
+        <textarea id="isTeacher" rows="5" cols="30" pInputTextarea formControlName="isTeacher"></textarea>
+      </div>
+      <div class="p-field">
+        <label for="email">Password</label>
+        <p-password formControlName="password" [feedback]="false"></p-password>
+      </div>
+    </form>
+</div>
