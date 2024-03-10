@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, inject, OnInit} from '@angular/core';
+import {Router, RouterOutlet} from '@angular/router';
 import { ConsoleViewComponent } from './console-view/console-view.component';
 import {UiViewComponent} from "./ui-view/ui-view.component";
 import {MenubarModule} from "primeng/menubar";
@@ -8,16 +8,20 @@ import {NgOptimizedImage} from "@angular/common";
 import {FileUploadModule} from "primeng/fileupload";
 import {ScriptViewComponent} from "./script-view/script-view.component";
 import { HttpClientModule } from '@angular/common/http';
+import {AppRoutingModule} from "./app.routes";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ConsoleViewComponent, UiViewComponent, MenubarModule, NgOptimizedImage, FileUploadModule, ScriptViewComponent, HttpClientModule],
+  imports: [RouterOutlet, ConsoleViewComponent, UiViewComponent, MenubarModule, NgOptimizedImage, FileUploadModule, ScriptViewComponent, HttpClientModule, AppRoutingModule],
+  providers: [Router],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
   items: MenuItem[] | undefined;
+
+  private router = inject(Router)
 
   ngOnInit() {
     this.items = [
@@ -51,7 +55,9 @@ export class AppComponent implements OnInit {
       {
         label: 'Classes',
         icon: 'pi pi-fw pi-pencil',
-        items: []
+        command: () => {
+          this.router.navigate(['/class-view']);
+        }
       },
       {
         label: 'Quit',

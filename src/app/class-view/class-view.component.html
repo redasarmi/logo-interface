@@ -1,1 +1,29 @@
-<p>class-view works!</p>
+<div class="class-view-container">
+  <form [formGroup]="classForm" (ngSubmit)="createClass()">
+    <label for="className">Class Name:</label>
+    <input type="text" id="className" formControlName="className">
+    <button type="submit">Create Class</button>
+  </form>
+
+  <form [formGroup]="studentForm" (ngSubmit)="addStudent()">
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" formControlName="studentName">
+
+    <label for="studentEmail">Student Email:</label>
+    <input type="email" id="studentEmail" formControlName="studentEmail">
+    <button type="submit">Add Student</button>
+  </form>
+
+  <form [formGroup]="practiceForm" (ngSubmit)="createAssignment()">
+    <label for="practiceId">Practice ID:</label>
+    <input type="text" id="practiceId" formControlName="practiceId">
+    <button type="submit">Create Assignment</button>
+  </form>
+
+  <form [formGroup]="gradeForm" (ngSubmit)="gradeAssignment()">
+    <label for="grade">Grade:</label>
+    <input type="text" id="grade" formControlName="grade">
+    <button type="submit">Grade Assignment</button>
+  </form>
+</div>
+
